@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Blog Layout</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Grid Layout */
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 260px 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      grid-area: header;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      padding: 1.5rem;
+      color: white;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar */
+    aside {
+      grid-area: sidebar;
+      background-color: #ffffff;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid #eee;
+      position: relative;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 1.5rem;
+    }
+
+    .sticky-nav h3 {
+      margin-bottom: 1rem;
+      color: #4facfe;
+    }
+
+    .sticky-nav ul {
+      list-style: none;
+    }
+
+    .sticky-nav li {
+      margin-bottom: 1rem;
+    }
+
+    .sticky-nav a {
+      display: block;
+      padding: 0.5rem;
+      border-radius: 6px;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .sticky-nav a:hover {
+      background-color: #e6f7ff;
+      color: #007acc;
+    }
+
+    /* Main */
+    main {
+      grid-area: main;
+      background-color: #fdfdfd;
+      padding: 2rem;
+    }
+
+    main section {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    main h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    main p {
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      grid-area: footer;
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        border-right: none;
+        border-top: 1px solid #eee;
+        padding: 1rem;
+      }
+
+      .sticky-nav {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    ✨ My Modern Blog
+  </header>
+
+  <aside>
+    <div class="sticky-nav">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#sec1">Web Design</a></li>
+        <li><a href="#sec2">JavaScript</a></li>
+        <li><a href="#sec3">CSS Tips</a></li>
+        <li><a href="#sec4">Productivity</a></li>
+        <li><a href="#sec5">Career</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <section id="sec1">
+      <h2>Web Design Principles</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum, libero ut hendrerit gravida, quam erat porttitor enim, ut porta urna est ac diam.</p>
+    </section>
+
+    <section id="sec2">
+      <h2>JavaScript Best Practices</h2>
+      <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt.</p>
+    </section>
+
+    <section id="sec3">
+      <h2>Modern CSS Tips</h2>
+      <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.</p>
+    </section>
+
+    <section id="sec4">
+      <h2>Boosting Productivity</h2>
+      <p>Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta.</p>
+    </section>
+
+    <section id="sec5">
+      <h2>Career in Tech</h2>
+      <p>Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 My Modern Blog | Designed with ❤️
+  </footer>
+</div>
+
+</body>
+</html>
